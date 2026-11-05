@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_online2/widgets/profile_header.dart';
+import 'package:flutter_online2/widgets/section_header.dart';
+import 'package:flutter_online2/widgets/streak_card.dart';
+import 'package:flutter_online2/widgets/summary_row.dart';
 
 class HomeScreen extends StatelessWidget{
 
@@ -8,45 +11,41 @@ class HomeScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Student Hub',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 40,
-            fontWeight: FontWeight(200),
-          ),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.blueAccent,
-        leading: Icon(
-          Icons.import_contacts_rounded,
-          color: Colors.white,
-          size: 34,
-        ),
-      ),
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(24.0),
           child: Column(
             children: [
               ProfileHeader(
                 name: 'Merna Hesham',
-                department: 'Artificial Intelligence',
-                level: 3,
+                subtitle: 'Faculty of AI . Year 3',
               ),
 
-              SizedBox(
-                height: 10,
+              const SizedBox(
+                height: 16,
               ),
 
-              ProfileHeader(name: 'Ahmed Mohamed', department: 'Artificial Intelligence - Bio', level: 4,),
+              StreakCard(
+                days: 7,
+                hours: 2,
+                progress: 2/3,
+              ),
 
-              SizedBox(
-                height: 10,)
-              ,
+              const SizedBox(
+                height: 16,
+              ),
 
-              ProfileHeader(name: 'Fatma Ali', department: 'Artificial Intelligence', level: 2,),
+              SummaryRow(),
+
+              const SizedBox(
+                height: 16,
+              ),
+
+              SectionHeader(
+                title: 'Today\'s Classes',
+                actionText: 'See All',
+                onAction: (){},
+              ),
             ],
           ),
         ),

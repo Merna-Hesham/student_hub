@@ -3,14 +3,12 @@ import 'package:flutter/material.dart';
 class ProfileHeader extends StatelessWidget {
 
   final String name;
-  final String department;
-  final int level;
+  final String subtitle;
 
   const ProfileHeader({
     super.key,
     required this.name,
-    required this.department,
-    required this.level
+    required this.subtitle,
   });
 
   String get initials {
@@ -20,54 +18,49 @@ class ProfileHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    final textTheme = Theme.of(context).textTheme;
+    final scheme = Theme.of(context).colorScheme;
+
+    return Row(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        CircleAvatar(
+          radius: 28,
+          backgroundColor: scheme.primaryContainer,
+          child: Text(
+            initials,
+            style: textTheme.titleMedium?.copyWith(
+              color: scheme.onPrimaryContainer,
+            ),
+          ),
+        ),
+
+        const SizedBox(width: 16,),
+
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CircleAvatar(
-              backgroundColor: Colors.lightBlueAccent,
-              radius: 50,
-              child: Text(
-                initials,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
+            Text(
+              'Good morning,',
+              style: textTheme.bodyMedium?.copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
+            ),
+
+            Text(
+              name,
+              style: textTheme.titleLarge?.copyWith(
+                color: scheme.onSurface
+              ),
+            ),
+
+            Text(
+              subtitle,
+              style: textTheme.bodySmall?.copyWith(
+                color: scheme.onSurfaceVariant,
               ),
             ),
           ],
         ),
-
-        SizedBox(
-          height: 20,
-        ),
-
-        Text(name,
-        style: TextStyle(
-          color: Colors.blue,
-          fontSize: 24,
-        ),),
-
-        SizedBox(
-          height: 20,
-        ),
-
-        Text(department,
-          style: TextStyle(
-            color: Colors.blue,
-            fontSize: 24,
-          ),),
-
-        SizedBox(
-          height: 20,
-        ),
-
-        Text('Level $level student',
-          style: TextStyle(
-            color: Colors.blue,
-            fontSize: 24,
-          ),),
       ],
     );
   }
