@@ -7,7 +7,7 @@ class StudentHubApp extends StatelessWidget{
   const StudentHubApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return MaterialApp(
       title: 'Student Hub',
       debugShowCheckedModeBanner: false,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class StreakCard extends StatelessWidget{
-
   final int days;
   final int hours;
   final double progress;
@@ -14,7 +13,7 @@ class StreakCard extends StatelessWidget{
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     final textTheme = Theme.of(context).textTheme;
     final scheme = Theme.of(context).colorScheme;
 

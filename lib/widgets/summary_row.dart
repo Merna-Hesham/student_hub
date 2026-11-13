@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_online2/widgets/summary_card.dart';
 
 class SummaryRow extends StatelessWidget{
+
   const SummaryRow({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
    return Row(
      mainAxisAlignment: MainAxisAlignment.spaceBetween,
      children: [
