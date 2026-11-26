@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_online2/screens/welcome_screen.dart';
+import 'package:flutter_online2/screens/main_shell.dart';
 import 'Theme/app_theme.dart';
 
 class StudentHubApp extends StatelessWidget{
@@ -14,7 +14,7 @@ class StudentHubApp extends StatelessWidget{
       theme: buildTheme(Brightness.light),
       darkTheme: buildTheme(Brightness.dark),
       themeMode: ThemeMode.system,
-      home: WelcomeScreen(),
+      home: MainShell(),
     );
   }
 }

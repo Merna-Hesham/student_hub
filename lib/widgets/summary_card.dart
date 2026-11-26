@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class SummaryCard extends StatelessWidget{
   final String label;
-  final double value;
+  final String value;
 
   const SummaryCard({
     super.key,
@@ -25,7 +25,7 @@ class SummaryCard extends StatelessWidget{
        crossAxisAlignment: CrossAxisAlignment.start,
        children: [
          Text(
-           '$value',
+           value,
            style: textTheme.headlineSmall?.copyWith(color: scheme.primary),
          ),
 
